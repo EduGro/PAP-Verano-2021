@@ -1,0 +1,15 @@
+{% if latest_team_list %}
+<ul>
+    {% for team in latest_team_list %}
+        <li>
+            <a href="{% url 'teams:detail' team.id %}">
+                {% load responsive_images %}
+                    <img src={{team.team_image}}>
+                {{ team.team_name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No teams are available.</p>
+{% endif %}

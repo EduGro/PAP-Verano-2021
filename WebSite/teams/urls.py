@@ -2,6 +2,10 @@ from django.urls import path
 
 from . import views
 
+app_name = 'teams'
 urlpatterns = [
-    path('', views.index, name='index'),
+    # ex: /teams/
+    path('', views.IndexView.as_view(), name='index'),
+    # ex: /teams/5/
+    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
 ]
