@@ -50,3 +50,4 @@ pip-delete-this-directory.txt
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+.vscode/

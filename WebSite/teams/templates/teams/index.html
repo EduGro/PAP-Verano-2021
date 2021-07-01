@@ -12,63 +12,47 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
-    <title>PAP</title>
+    <title>Equipos</title>
 </head>
 
 <body>
 
-    <nav>
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo"><i class="material-icons">donut_large</i>Logo</a>
-            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="sass.html">Sass</a></li>
-                <li><a href="badges.html">Components</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Mobile</a></li>
-            </ul>
-        </div>
-    </nav>
+    {% include "header.html" %}
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-    </ul>
-
-    <div class="parallax-container">
+    <!-- <div class="parallax-container">
         {% load static %}
         <div class="parallax"><img src="{% static 'teams/images/Soccer.jpg' %}"></div>
-    </div>
+    </div> -->
     <div class="section white">
         <div class="row container">
-            <h2 class="header">Parallax</h2>
+            <h2 class="header center">Equipos</h2>
             <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in
                 this case, is moved at a different speed than the foreground content while scrolling.</p>
         </div>
 
-        <div class="container">
-            {% if latest_team_list %}
-            <ul>
-                {% for team in latest_team_list %}
-                <li>
-                    <a href="{% url 'teams:detail' team.id %}">
-                        {% load responsive_images %}
-                        <img class="img-responsive" src={{team.team_image}}>
-                        {{ team.team_name }}
-                    </a>
-                </li>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>No teams are available.</p>
-            {% endif %}
+        <div class="container row">
+            <div class="col l4 m6 s12 center-align">
+                {% if latest_team_list %}
+                <ul>
+                    {% for team in latest_team_list %}
+                    <li>
+                        <a href="{% url 'teams:detail' team.id %}">
+                            {% load responsive_images %}
+                            <img class="img-responsive" src={{team.team_image}}>
+                            <h3 class="black-text ">{{ team.team_name }}</h3>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No teams are available.</p>
+                {% endif %}
+            </div>
         </div>
-
 
         {% load static %}
         <script src="{% static 'teams/index.js' %}"></script>
+
+        {% include "footer.html" %}
 
 </body>
