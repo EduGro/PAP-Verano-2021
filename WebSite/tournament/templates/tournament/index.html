@@ -1,0 +1,75 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teams/style.css' %}">
+    <title>Torneos</title>
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header center">Torneos</h2>
+            <p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Quibusdam ipsum aspernatur, minima qui alias quod.</p>
+        </div>
+
+        <div class="container">
+            <div class="carousel carousel-slider center " data-indicators="true">
+                <div class="carousel-fixed-item center middle-indicator">
+                    <div class="left">
+                        <a href="Previo"
+                            class="movePrevCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                                class="material-icons left  middle-indicator-text">chevron_left</i></a>
+                    </div>
+
+                    <div class="right">
+                        <a href="Siguiente"
+                            class=" moveNextCarousel middle-indicator-text waves-effect waves-light content-indicator"><i
+                                class="material-icons right middle-indicator-text">chevron_right</i></a>
+                    </div>
+                </div>
+                <div class="carousel-item grey" href="#one!">
+                    <h2>Torneos Abiertos</h2>
+                    <p class="">This is your first panel</p>
+                </div>
+                <div class="carousel-item grey" href="#two!">
+                    <h2>Ligas Abiertas</h2>
+                    <p class="white-text">This is your second panel</p>
+                </div>
+                <div class="carousel-item grey" href="#three!">
+                    <h2>Torneos en Curso</h2>
+                    <p class="white-text">This is your third panel</p>
+                </div>
+                <div class="carousel-item grey" href="#four!">
+                    <h2>Ligas en Curso</h2>
+                    <p class="white-text">This is your fourth panel</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'teams/index.js' %}"></script>
+
+    {% load static %}
+    <script src="{% static 'tournament/index.js' %}"></script>
+
+    {% include "footer.html" %}
+
+</body>

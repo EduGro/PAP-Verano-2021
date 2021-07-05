@@ -7,3 +7,41 @@
     max-width: 300px;
     height: auto;
 }
+
+#foot {
+    font-size: .9em;
+    padding: 0px 0px 0px 0px;
+    border-width: 0px;
+    word-wrap: break-word;
+    font-family: 'Arial Normal', 'Arial', sans-serif;
+    font-style: normal;
+    font-size: 13px;
+    letter-spacing: normal;
+}
+
+
+.middle-indicator {
+    position: absolute;
+    top: 50%;
+}
+
+.middle-indicator-text {
+    font-size: 4.2rem;
+}
+
+a.middle-indicator-text {
+    color: white !important;
+}
+
+.content-indicator {
+    width: 64px;
+    height: 64px;
+    background: none;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+.indicators {
+    visibility: hidden;
+}
