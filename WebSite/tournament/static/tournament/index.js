@@ -1,9 +1,10 @@
 // start carrousel
-$('.carousel.carousel-slider').carousel({
-    fullWidth: true,
-    indicators: false
-});
 
+$(document).ready(function(){
+    $('.carousel').carousel({
+        full_width: true
+    });
+});
 
 // move next carousel
 $('.moveNextCarousel').click(function (e) {

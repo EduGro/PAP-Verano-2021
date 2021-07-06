@@ -33,7 +33,12 @@ a.middle-indicator-text {
     color: white !important;
 }
 
-.content-indicator {
+.iconify {
+    width: 24px;
+    height: 24px;
+}
+
+/*.content-indicator {
     width: 64px;
     height: 64px;
     background: none;
@@ -45,3 +50,15 @@ a.middle-indicator-text {
 .indicators {
     visibility: hidden;
 }
+
+/*.caption {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)!important;
+}
+
+.my-card {
+    padding-left: 20%;
+    padding-right: 20%;
+}*/

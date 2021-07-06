@@ -11,6 +11,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'teams/style.css' %}">
@@ -28,8 +29,8 @@
                 Quibusdam ipsum aspernatur, minima qui alias quod.</p>
         </div>
 
-        <div class="container">
-            <div class="carousel carousel-slider center " data-indicators="true">
+        <div class="container center">
+            <div class="carousel carousel-slider">
                 <div class="carousel-fixed-item center middle-indicator">
                     <div class="left">
                         <a href="Previo"
@@ -44,20 +45,50 @@
                     </div>
                 </div>
                 <div class="carousel-item grey" href="#one!">
-                    <h2>Torneos Abiertos</h2>
-                    <p class="">This is your first panel</p>
+                    <h4>Torneos Abiertos</h4>
+                    {% if tournament_open %}
+                        {% for tournament in tournament_open %}
+                            <p>{{ tournament.tournament_name }}</p>
+                        {% endfor %}
+                    {% else %}
+                    <div class="row">
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                      </div>
+                    {% endif %}
+                    
                 </div>
                 <div class="carousel-item grey" href="#two!">
-                    <h2>Ligas Abiertas</h2>
-                    <p class="white-text">This is your second panel</p>
+                    <h4>Ligas Abiertas</h4>
+                    <div class="row center-align">
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                        {% include "tournament.html" %}
+                    </div>
+
                 </div>
                 <div class="carousel-item grey" href="#three!">
-                    <h2>Torneos en Curso</h2>
-                    <p class="white-text">This is your third panel</p>
+                    <h4>Torneos en Curso</h4>
+                    {% if tournament_started %}
+                        {% for tournament in tournament_started %}
+                            <p>{{ tournament.tournament_name }}</p>
+                        {% endfor %}
+                    {% else %}
+                        <h6 class="white-text caption">Nothing to show yet</h6>
+                    {% endif %}
                 </div>
                 <div class="carousel-item grey" href="#four!">
-                    <h2>Ligas en Curso</h2>
-                    <p class="white-text">This is your fourth panel</p>
+                    <h4>Ligas en Curso</h4>
+                    <p class="white-text caption">This is your fourth panel</p>
                 </div>
             </div>
 
