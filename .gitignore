@@ -51,3 +51,4 @@ pip-delete-this-directory.txt
 !.vscode/extensions.json 
 .history
 .vscode/
+.DS_Store
