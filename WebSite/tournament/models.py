@@ -17,6 +17,10 @@ class Tournaments(models.Model):
     def next_tournaments(self):
         return self.tournament_start_date >= timezone.now()
 
+    @property
+    def is_in_progress(self):
+        return (self.tournament_end_date >= timezone.now() and self.tournament_start_date <= timezone.now())
+
     def duration(self):
         return str((self.tournament_end_date - self.tournament_end_date).days)
 
