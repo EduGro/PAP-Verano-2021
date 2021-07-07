@@ -38,27 +38,14 @@ a.middle-indicator-text {
     height: 24px;
 }
 
-/*.content-indicator {
-    width: 64px;
-    height: 64px;
-    background: none;
-    -moz-border-radius: 50px;
-    -webkit-border-radius: 50px;
-    border-radius: 50px;
+.smallCarousel {
+    height: 1500px;
+    border: 1px solid red;
+    border-spacing: 20px 20px;
 }
 
-.indicators {
-    visibility: hidden;
+.medCarousel {
+    height: 900px;
+    border: 1px solid red;
+    border-spacing: 20px 20px;
 }
-
-/*.caption {
-    position:absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%)!important;
-}
-
-.my-card {
-    padding-left: 20%;
-    padding-right: 20%;
-}*/
