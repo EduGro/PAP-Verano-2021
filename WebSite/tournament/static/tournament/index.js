@@ -1,9 +1,8 @@
 // start carrousel
 
-$(document).ready(function(){
-    $('.carousel').carousel({
-        full_width: true
-    });
+$('.carousel.carousel-slider').carousel({
+    fullWidth: true,
+    indicators: false
 });
 
 // move next carousel

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'teams',
     'tournament',
+    'principal',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
