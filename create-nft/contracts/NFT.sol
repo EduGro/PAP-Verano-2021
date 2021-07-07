@@ -17,7 +17,7 @@ contract NFT is ERC721 {
   }
 
   function _baseURI() internal view override returns (string memory) {
-    return 'https://hidden-brook-84011.herokuapp.com/';
+    return 'https://tranquil-journey-13489.herokuapp.com/';
   }
 
 }
