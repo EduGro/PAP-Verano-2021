@@ -17,7 +17,7 @@ contract NFT is ERC721 {
   }
 
   function _baseURI() internal view override returns (string memory) {
-    return 'https://tranquil-journey-13489.herokuapp.com/';
+    return 'https://shrouded-river-49419.herokuapp.com/';
   }
 
 }
