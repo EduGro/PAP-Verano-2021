@@ -52,3 +52,6 @@ pip-delete-this-directory.txt
 .history
 .vscode/
 .DS_Store
+WebSite/manifest.yml
+WebSite/static
+WebSite/mysite/static

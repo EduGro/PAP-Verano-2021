@@ -1,5 +1,3 @@
-// start carrousel
-
 $('.carousel.carousel-slider').carousel({
     fullWidth: true,
     indicators: false
