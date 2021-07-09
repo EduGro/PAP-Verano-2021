@@ -15,5 +15,5 @@ class IndexView(generic.ListView):
         return Team.objects.order_by('team_name')[:5]
 
 class DetailView(generic.DetailView):
-    model = Player
+    model = Team
     template_name = 'teams/detail.html'
