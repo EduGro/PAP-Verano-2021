@@ -1,9 +1,20 @@
 <tournament>
     <div class="col s6 m4 l4">
-        <div class="card-panel teal">
-            <span class="white-text">
-                {{ tournament.tournament_name }}
+        <div class="card-panel grey lighten-2 z-depth-4 flow-text">
+            <span>
+                <div class="row valign-wrapper">
+                    <div class="col s6 center-align">
+                        <i class="material-icons large">emoji_events</i>
+                    </div>
+                    <div class="col s6">
+                        <b>{{ tournament.tournament_name }}</b> <span class="iconify" data-icon="clarity:group-solid-badged"
+                            data-inline="false"></span>
+                        <br>
+                        {{ tournament.duration }} dias - {{ tournament.tournament_city }}
+                    </div>
+                </div>
             </span>
+
         </div>
     </div>
 </tournament>

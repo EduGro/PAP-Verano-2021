@@ -36,12 +36,10 @@ a.middle-indicator-text {
 
 .smallCarousel {
     height: 1500px;
-    border: 1px solid red;
     border-spacing: 20px 20px;
 }
 
 .medCarousel {
     height: 900px;
-    border: 1px solid red;
     border-spacing: 20px 20px;
 }

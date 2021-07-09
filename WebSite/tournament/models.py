@@ -2,7 +2,6 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
-from teams.models import Team
 
 # Create your models here.
 class Tournaments(models.Model):
@@ -12,7 +11,7 @@ class Tournaments(models.Model):
     tournament_end_date = models.DateTimeField('end date')
 
     def __str__(self):
-        return self.tournament_name + ", Duration: " + duration()
+        return "Nombre: " + self.tournament_name + ", Ciudad: " + self.tournament_city + ", Fecha de inicio: " + self.tournament_start_date.strftime("%d %B %Y") + ", Duaración: " + self.duration + " días"
 
     def next_tournaments(self):
         return self.tournament_start_date >= timezone.now()
@@ -21,10 +20,6 @@ class Tournaments(models.Model):
     def is_in_progress(self):
         return (self.tournament_end_date >= timezone.now() and self.tournament_start_date <= timezone.now())
 
+    @property
     def duration(self):
-        return str((self.tournament_end_date - self.tournament_end_date).days)
-
-class Teams_Tournaments(models.Model):
-    foreignKeyTeam = models.ForeignKey(Team, on_delete=models.CASCADE)
-    foreignKeyTournament = models.ForeignKey(Tournaments, on_delete=models.CASCADE)
-    register_day = models.DateTimeField('register date')
+        return str((self.tournament_end_date - self.tournament_start_date).days)

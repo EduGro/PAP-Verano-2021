@@ -1,0 +1,149 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teams/style.css' %}">
+    <title>Inicio</title>
+</head>
+
+<body>
+
+    {% include "header.html" %}
+
+    <h1 class="header center">Proyecto PAP</h1>
+    <div class="container section white">
+        <div class="card grey">
+            <div class="row container">
+                <h2 class="header center">Equipos</h2>
+                <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image
+                    in
+                    this case, is moved at a different speed than the foreground content while scrolling.</p>
+            </div>
+
+            <div class="container row  grey lighten-2">
+                <div class="col l4 m4 s12 center-align">
+                    {% if latest_team_list %}
+                    <ul>
+                        {% for team in latest_team_list %}
+                        <li>
+                            <a href="{% url 'teams:detail' team.id %}">
+                                {% load responsive_images %}
+                                <img class="img-responsive" src={{team.team_image}}>
+                                <h3 class="black-text ">{{ team.team_name }}</h3>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p>No teams are available.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="center-align">
+                <a class="red darken-4  waves-effect waves-purple btn-small" href="{% url 'teams:index' %}">Ver todos</a>
+            </div>
+
+            <div class="section white">
+                <div class="card grey">
+                    <div class="row container">
+                        <h2 class="header center">Torneos</h2>
+                        <p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Quibusdam ipsum aspernatur, minima qui alias quod.</p>
+                    </div>
+
+                    <div class="card grey lighten-1">
+                        <h4 class="center-align">Torneos Abiertos</h4>
+                        {% if tournament_open %}
+                            {% for tournament in tournament_open %}
+                                <div class="container">
+                                    {% include "tournament.html" %}
+                                </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="container">
+                            <div class="row center-align">
+                                <h6 class="white-text caption">Nothing to show yet</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="center-align">
+                            <a class="red darken-4  waves-effect waves-purple btn-small" href="{% url 'tournament:index' %}">Ver todos</a>
+                        </div>
+                    </div>
+
+                    <div class="card grey lighten-1">
+                        <h4 class="center-align">Ligas Abiertas</h4>
+                        <div class="row center-align">
+                            <h6 class="white-text caption">Nothing to show yet</h6>
+                        </div>
+                        <div class="center-align">
+                            <a class="red darken-4  waves-effect waves-purple btn-small" href="{% url 'tournament:index' %}">Ver todos</a>
+                        </div>
+                    </div>
+
+                    <div class="card grey lighten-1">
+                        <h4 class="center-align">Torneos en Curso</h4>
+                        {% if tournament_started %}
+                            {% for tournament in tournament_started %}
+                                <div class="container">
+                                    {% include "tournament.html" %}
+                                </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="container">
+                            <div class="row center-align">
+                                <h6 class="white-text caption">Nothing to show yet</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="center-align">
+                            <a class="red darken-4  waves-effect waves-purple btn-small" href="{% url 'tournament:index' %}">Ver todos</a>
+                        </div>
+                    </div>
+                    <div class="card grey lighten-1">
+                        <h4 class="center-align">Torneos en terminados</h4>
+                        {% if tournament_close %}
+                            {% for tournament in tournament_close %}
+                                <div class="container">
+                                    {% include "tournament.html" %}
+                                </div>
+                        {% endfor %}
+                        {% else %}
+                        <div class="container">
+                            <div class="row center-align">
+                                <h6 class="white-text caption">Nothing to show yet</h6>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <div class="center-align">
+                            <a class="red darken-4  waves-effect waves-purple btn-small" href="{% url 'tournament:index' %}">Ver todos</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        {% load static %}
+        <script src="{% static 'teams/index.js' %}"></script>
+
+        {% load static %}
+        <script src="{% static 'tournament/index.js' %}"></script>
+
+        {% include "footer.html" %}
+
+</body>

@@ -1,13 +1,13 @@
 <div class="header">
-    <nav class="black">
+    <nav class="red darken-4">
         <div class="container nav-wrapper">
             <a href="{% url 'principal:index' %}" class="brand-logo"><i class="material-icons">sports_soccer</i>Logo</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="{% url 'principal:index' %}">INCIO</a></li>
+                <li><a href="{% url 'principal:index' %}">INICIO</a></li>
                 <li><a href="{% url 'tournament:index' %}">TORNEOS</a></li>
                 <li><a href="{% url 'teams:index' %}">EQUIPOS</a></li>
-                <li><a href="collapsible.html">CANCAHAS</a></li>
+                <li><a href="collapsible.html">CANCHAS</a></li>
                 <li><a href="mobile.html">ARBITROS</a></li>
                 <li><a href="{% url 'admin:index' %}">LOG IN/SIGN UP</a></li>
             </ul>
@@ -15,10 +15,10 @@
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="{% url 'principal:index' %}">INCIO</a></li>
+        <li><a href="{% url 'principal:index' %}">INICIO</a></li>
         <li><a href="{% url 'tournament:index' %}">TORNEOS</a></li>
         <li><a href="{% url 'teams:index' %}">EQUIPOS</a></li>
-        <li><a href="collapsible.html">CANCAHAS</a></li>
+        <li><a href="collapsible.html">CANCHAS</a></li>
         <li><a href="mobile.html">ARBITROS</a></li>
         <li><a href="{% url 'admin:index' %}">LOG IN/SIGN UP</a></li>
 </div>
