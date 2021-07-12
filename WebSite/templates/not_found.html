@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teams/style.css' %}">
+    <title>404</title>
+</head>
+
+<body>
+
+    {% include "header.html" %}
+    <div class="container">
+        <div class="section white">
+            <div class="row container">
+                <h1 class="header center-align">404</h1>
+                <h2 class="header center-align">NOT FOUND</h2>
+                <h5 class="grey-text text-darken-3 lighten-3 center-align">Lo sentimos esta parte del proyecto todavía no existe. Esto todavía es un trabajo en proceso.</h5>
+            </div>
+        </div>
+        <div class="parallax-container">
+            <div class="parallax"><img src="https://i.imgur.com/HVWORsR.jpg"></div>
+        </div>
+    </div>
+
+    {% load static %}
+    <script src="{% static 'teams/index.js' %}"></script>
+
+    {% include "footer.html" %}
+
+</body>

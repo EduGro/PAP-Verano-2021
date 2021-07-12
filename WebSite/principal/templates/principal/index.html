@@ -27,29 +27,24 @@
         <div class="card grey">
             <div class="row container">
                 <h2 class="header center">Equipos</h2>
-                <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image
-                    in
-                    this case, is moved at a different speed than the foreground content while scrolling.</p>
+                <p class="grey-text text-darken-3 lighten-3">Clubes de futbol que participan en los torneos y ligas organizados mediante CriptoFut.</p>
             </div>
 
             <div class="container row  grey lighten-2">
-                <div class="col l4 m4 s12 center-align">
+                
                     {% if latest_team_list %}
-                    <ul>
                         {% for team in latest_team_list %}
-                        <li>
+                        <div class="col l3 m3 s12 center-align">
                             <a href="{% url 'teams:detail' team.id %}">
                                 {% load responsive_images %}
-                                <img class="img-responsive" src={{team.team_image}}>
-                                <h3 class="black-text ">{{ team.team_name }}</h3>
+                                <img class="img responsive-img" src={{team.team_image}}>
+                                <h5 class="black-text ">{{ team.team_name }}</h5>
                             </a>
-                        </li>
+                        </div>
                         {% endfor %}
-                    </ul>
                     {% else %}
                     <p>No teams are available.</p>
                     {% endif %}
-                </div>
             </div>
 
             <div class="center-align">
@@ -60,9 +55,7 @@
                 <div class="card grey">
                     <div class="row container">
                         <h2 class="header center">Torneos</h2>
-                        <p class="grey-text text-darken-3 lighten-3">Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Quibusdam ipsum aspernatur, minima qui alias quod.</p>
+                        <p class="grey-text text-darken-3 lighten-3">Eventos deportivos de corta duración, celebrados con una menor cantidad de equipos.</p>
                     </div>
 
                     <div class="card grey lighten-1">
@@ -137,6 +130,7 @@
 
             </div>
         </div>
+    </div>
 
         {% load static %}
         <script src="{% static 'teams/index.js' %}"></script>
