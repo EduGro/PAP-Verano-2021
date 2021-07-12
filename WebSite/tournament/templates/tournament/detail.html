@@ -1,0 +1,82 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teams/style.css' %}">
+    <title>{{tournaments.tournament_name}}</title>
+</head>
+
+<body>
+    {% include "header.html" %}
+
+    <div class="container">
+        <h2 class="black-text center-align">{{tournaments.tournament_name}}</h2>
+        <div class="row">
+            <div class="col m8 s12">
+                {% if tournaments.tournamentTournament.all.count > 0 %}
+                <table class="centered striped">
+                    <thead>
+                        <tr>
+                            <th>Equipo</th>
+                            <th>Fecha de registro</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for team in tournaments.tournamentTournament.all %}
+                        <tr>
+                            <td><a href="{% url 'teams:detail' team.foreignKeyTeam.id %}">{{team.foreignKeyTeam.team_name}}</a></td>
+                            <td>{{team.register_day}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                {% else %}
+                <div class="valign-wrapper">
+                    <h5 class="center-align">Ningun equipo se ha registrado</h5>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col m4 s12 ">
+                <div class="">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="https://i.imgur.com/G5RI8d4.jpg">
+                            <span class="card-title">Ejemplo de premio NFT #1/12</span>
+                        </div>
+                        <div class="card-content">
+                            <p>El premio incluye uno para el equipo y 11 para los jugadores (este no es el premio final y esta sujeto a cambio)</p>
+                        </div>
+                        <div class="card-action center-align">
+                            <a class="btn disabled">Assignar a un equipo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    {% load static %}
+    <script src="{% static 'teams/index.js' %}"></script>
+
+    {% load static %}
+    <script src="{% static 'tournament/index.js' %}"></script>
+
+    {% include "footer.html" %}
+
+</body>

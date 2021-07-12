@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
-from .models import Team, Player, Position
+from .models import Team, Player, Position, NFT
 
 
 class IndexView(generic.ListView):
@@ -12,7 +12,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the first five teams."""
-        return Team.objects.order_by('team_name')[:5]
+        return Team.objects.order_by('team_name')
 
 class DetailView(generic.DetailView):
     model = Team

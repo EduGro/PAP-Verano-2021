@@ -1,7 +1,7 @@
-.img-responsive {
-    width: 100%;
+.img {
     max-width: 300px;
-    height: auto;
+    max-height: 300px;
+    min-height: 150px;
 }
 
 #foot {
@@ -42,4 +42,8 @@ a.middle-indicator-text {
 .medCarousel {
     height: 900px;
     border-spacing: 20px 20px;
+}
+
+.teamCols{
+    height: 500px;
 }

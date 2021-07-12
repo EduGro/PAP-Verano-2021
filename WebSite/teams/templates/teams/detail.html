@@ -13,19 +13,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
-    <!-- {% load static %}
-    <link rel="stylesheet" href="{% static 'teams/style.css' %}"> -->
-    <title>Torneos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'teams/style.css' %}">
+    <title>{{team.team_name}}</title>
 </head>
 
 <body>
 
     {% include "header.html" %}
 
-    <h1>Hello world from teams details</h1>
+    <div class="container center-align">
+        <h2 class="black-text ">{{ team.team_name }}</h2>
+        <img class="responsive-img" src={{team.team_image}}>
+        <br>
+        <hr>
+        <h3>Trofeos</h3>
+    </div>
+
+    <div class="container">
+        {% if team.teamNFT.all.count <= 0 %}
+            <h4 class="center-align">Este equipo no tiene trofeos aún</h4>
+        {% endif %}
+        <div class="row">
+            {% for nft in team.teamNFT.all %}
+            <div class="col s6 m6 l3">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{nft.image}}">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">{{nft.title}}<i
+                                class="material-icons">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">{{nft.title}}<i
+                                class="material-icons right">close</i></span>
+                        <p style='word-wrap:break-word;display:block;'>Contract Address: {{nft.contract_address}}</p>
+                        <p style='word-wrap:break-word;display:block;'>Token ID: {{nft.token}}</p>
+                        <p>Nombre del torneo: {{nft.tournament.tournament_name}}</p>
+                        <p>Fecha de finzalizacion: {{nft.tournament.tournament_end_date}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
 
     {% load static %}
-    
+
     <script src="{% static 'teams/index.js' %}"></script>
 
     {% include "footer.html" %}
